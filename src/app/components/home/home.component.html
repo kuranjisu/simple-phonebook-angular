@@ -1,0 +1,32 @@
+<!-- <p>home works!</p> -->
+<div class="container">
+    <div class="row mt-2">
+        <div class="col col-md-4 offset-md-4">
+          <a class="btn btn-primary" routerLink="/api/create">Create</a>
+        </div>
+      </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Phone Number</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let contact of contacts">
+          <th scope="row">{{ contact.id }}</th>
+          <td>{{ contact.name }}</td>
+          <td>{{ contact.email }}</td>
+          <td>{{ contact.phone }}</td>
+          <td>
+            <a class="btn btn-primary" [routerLink]="['/api/edit', contact.id]">Edit</a> |
+            <button type="button" (click)="deleteContact(contact.id)" class="btn btn-danger">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+

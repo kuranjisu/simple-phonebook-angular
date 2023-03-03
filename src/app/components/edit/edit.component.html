@@ -1,0 +1,18 @@
+<div class="container">
+    <legend>Edit Contact</legend>
+    <form>
+      <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" name="name" class="form-control" id="name" #name [value] = "model.name"/>
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="text" name="email" class="form-control" id="email" #email [value] = "model.email"/>
+      </div>
+      <div class="mb-3">
+        <label for="phone" class="form-label">Phone Number</label>
+        <input type="text" name="number" class="form-control" id="phone" #phone [value] = "model.phone"/>
+      </div>
+      <button type="button" (click)="editContact(name.value, email.value, phone.value)" class="btn btn-primary">Update</button>
+    </form>
+</div>
